@@ -15,4 +15,4 @@ artifacts:
     - target/*.war
     - scripts/*.sh
     - appspec.yml
-  discard-paths: yes
+ 
