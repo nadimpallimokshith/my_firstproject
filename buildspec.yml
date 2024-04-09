@@ -13,6 +13,9 @@ phases:
 artifacts:
   files:
     - target/*.war
-    - scripts/*.sh
+    - server_clear.sh
+    - server_start.sh
+    - server_stop.sh
+    - fix_privileges.sh
     - appspec.yml
  
