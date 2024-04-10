@@ -20,6 +20,9 @@ hooks:
     - location: fix_privileges.sh
       timeout: 300
       runas: ec2-user
+      - location: chmod_script.sh  # Add a custom script to set executable permissions
+        timeout: 20
+        runas: ec2-user
   ApplicationStart:
     - location: server_start.sh
       timeout: 20
