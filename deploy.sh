@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf /home/ec2-user/tomcat/webapps/*
+rm -rf /home/ec2-user/tomcat/webapps/firstproject/*
 
 # Copy application artifact to Tomcat webapps directory
 cp /home/ec2-user/server/target/firstproject123-1.0-SNAPSHOT.war /home/ec2-user/tomcat/webapps/firstproject
