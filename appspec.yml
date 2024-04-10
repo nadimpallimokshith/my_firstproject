@@ -21,7 +21,7 @@ hooks:
       timeout: 300
       runas: ec2-user
     - location: deploy.sh 
-      timeout: 20
+      timeout: 500
       runas: ec2-user
   ApplicationStart:
     - location: server_start.sh
