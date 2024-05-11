@@ -17,7 +17,7 @@ hooks:
       timeout: 300
       runas: ec2-user
   AfterInstall:
-    - location: deploy.sh 
+    - location: dos2unix deploy.sh
       timeout: 500
       runas: ec2-user
 
