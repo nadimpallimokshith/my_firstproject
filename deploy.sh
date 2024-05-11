@@ -1,12 +1,12 @@
 #!/bin/bash
 
-sudo rm -rf /home/tomcat8/webapps/*
+sudo rm -rf /home/ec2-user/tomcat8/webapps/*
 
 # Copy application artifact to Tomcat webapps directory
-sudo cp /home/ec2-user/server/target/firstproject123-1.0-SNAPSHOT.war /home/tomcat8/webapps/
+sudo cp /home/ec2-user/server/target/firstproject123-1.0-SNAPSHOT.war /home/ec2-user/tomcat8/webapps/
 
 # Change directory to Tomcat bin folder
-cd /home/tomcat8/bin
+cd /home/ec2-user/tomcat8/bin
 
 # Stop Tomcat
 sudo ./shutdown.sh
