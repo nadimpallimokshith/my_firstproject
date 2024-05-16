@@ -23,8 +23,5 @@ phases:
 artifacts:
   files:
     - target/*.war
-    - before_install.sh
-    - after_install.sh
-    - application_start.sh
-    - application_stop.sh
+    
   discard-paths: yes
