@@ -23,6 +23,8 @@ phases:
     commands:
       - echo Running post-build actions...
       # Add any post-build commands here, such as running tests or packaging the application for deployment
+      - mkdir target
+      - cp -r bin/ target/
       # Example: Publish the build artifacts to S3 bucket
       - aws s3 cp target/ s3://firstproject123/ --recursive
 
