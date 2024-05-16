@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       java: corretto11
-      tomcat: 8.5
+      
     commands:
       - echo "Installing Maven..."
       - apt-get update && apt-get install -y maven
