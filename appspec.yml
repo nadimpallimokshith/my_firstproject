@@ -3,13 +3,4 @@ os: windows
 files:
   - source: target/
     destination: C:\
-hooks:
-  BeforeInstall:
-    - location: BeforeInstall.ps1
-      timeout: 900
-  AfterInstall:
-    - location: AfterInstall.ps1
-      timeout: 900
-  ApplicationStart:
-    - location: ApplicationStart.ps1
-      timeout: 900
+
