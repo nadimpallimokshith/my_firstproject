@@ -3,17 +3,30 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto11
-  build:
+      dotnet: 3.1
+      powershell: latest
+    commands:
+      - echo Installing dependencies...
+      # Add any installation commands here, such as installing required software or packages
+
+  pre_build:
     commands:
       - mvn clean install
-  post_build:
+      # Add any pre-build commands here, such as setting up environment variables or configurations
+
+  build:
     commands:
       - echo Build completed
+      # Add commands to build your application here, such as compiling code or running build scripts
+
+  post_build:
+    commands:
+      - echo Running post-build actions...
+      # Add any post-build commands here, such as running tests or packaging the application for deployment
+      # Example: Publish the build artifacts to S3 bucket
+      - aws s3 cp target/ s3://firstproject123/ --recursive
+
 artifacts:
   files:
-    - target/*.war
-    - server_clear.sh
-    - deploy.sh
-    - appspec.yml
- 
+    - target/**
+
