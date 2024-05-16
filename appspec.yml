@@ -2,7 +2,7 @@ version: 0.0
 os: windows
 files:
   - source: target/
-    destination: C:\tomcat\webapps\
+    destination: C:\
 hooks:
   BeforeInstall:
     - location: BeforeInstall.ps1
