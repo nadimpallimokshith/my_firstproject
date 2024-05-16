@@ -3,32 +3,28 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      dotnet: 3.1
-      powershell: latest
+      java: corretto11
+      tomcat: 8.5
     commands:
-      - echo Installing dependencies...
-      # Add any installation commands here, such as installing required software or packages
-
+      - echo "Installing Maven..."
+      - apt-get update && apt-get install -y maven
   pre_build:
     commands:
+      - echo "Building the application..."
       - mvn clean install
-      # Add any pre-build commands here, such as setting up environment variables or configurations
-
   build:
     commands:
-      - echo Build completed
-      # Add commands to build your application here, such as compiling code or running build scripts
-
+      - echo "Creating WAR file..."
+      - mvn package
   post_build:
     commands:
-      - echo Running post-build actions...
-      # Add any post-build commands here, such as running tests or packaging the application for deployment
-      - if (Test-Path -Path "target" -PathType Container) { Write-Host "Directory 'target' already exists." } else { New-Item -ItemType Directory -Path "target" }
-      
-      # Example: Publish the build artifacts to S3 bucket
-      - aws s3 cp target/ s3://firstproject123/ --recursive
-
+      - echo "Post build steps..."
+      # Add any post-build steps here
 artifacts:
   files:
-    - target/**
-
+    - target/*.war
+    - before_install.sh
+    - after_install.sh
+    - application_start.sh
+    - application_stop.sh
+  discard-paths: yes

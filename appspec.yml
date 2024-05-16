@@ -1,6 +1,24 @@
 version: 0.0
-os: windows
+os: linux
 files:
   - source: target/
-    destination: C:\
+    destination: /var/lib/tomcat/webapps/firstproject123-1.0-SNAPSHOT
+permissions:
+  - object: /var/lib/tomcat/webapps/firstproject123-1.0-SNAPSHOT
+    pattern: "**"
+    owner: tomcat8
+    group: tomcat8
+hooks:
+  BeforeInstall:
+    - location: before_install.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: after_install.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: application_start.sh
+      timeout: 300
+      runas: root
 

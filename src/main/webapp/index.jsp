@@ -96,10 +96,10 @@
 
             <label for="comments">Comments:</label>
             <textarea id="comments" name="comments" rows="4" required></textarea>
-            
+<!--            
             <label for="profilePic">Profile Picture:</label>
             <input type="file" id="profilePic" name="profilePic">
-            
+-->            
             <input type="submit" value="Submit">
         </form>
     </div>

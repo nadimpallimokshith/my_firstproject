@@ -25,19 +25,7 @@ public class SubmitFormServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String region = request.getParameter("region");
         String comments = request.getParameter("comments");
-        Part profilePic = request.getPart("profilePic");
-
-        // Save profile picture to server (Tomcat)
-        String fileName = "";
-        if(profilePic != null){
-            fileName = profilePic.getSubmittedFileName();
-            String uploadPath = getServletContext().getRealPath("") + File.separator + "uploads";
-            File uploadDir = new File(uploadPath);
-            if (!uploadDir.exists()) {
-                uploadDir.mkdir();
-            }
-            profilePic.write(uploadPath + File.separator + fileName);
-        }
+     
 
         // Store data in MySQL database
         Connection connection = null;
@@ -48,8 +36,8 @@ public class SubmitFormServlet extends HttpServlet {
             connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
 
             // SQL query to insert form data into the database
-            String sql = "INSERT INTO user_info (name, gender, age, email, phone, region, comments, profile_pic) " +
-                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO user_info (name, gender, age, email, phone, region, comments) " +
+                         "VALUES (?, ?, ?, ?, ?, ?, ?)";
             statement = connection.prepareStatement(sql);
             statement.setString(1, name);
             statement.setString(2, gender);
@@ -58,7 +46,6 @@ public class SubmitFormServlet extends HttpServlet {
             statement.setString(5, phone);
             statement.setString(6, region);
             statement.setString(7, comments);
-            statement.setString(8, fileName);
             statement.executeUpdate();
             
             response.sendRedirect("registrationConfirmation.jsp");
