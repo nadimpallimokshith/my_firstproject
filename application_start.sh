@@ -1,4 +1,3 @@
 #!/bin/bash
 
-# Example: Start Tomcat service
-service tomcat8 start
+sudo service tomcat start
