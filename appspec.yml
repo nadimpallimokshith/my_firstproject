@@ -17,8 +17,5 @@ hooks:
     - location: start_tomcat.sh
       timeout: 300
       runas: ubuntu
-  ApplicationStart:
-    - location: verify_tomcat.sh
-      timeout: 300
-      runas: ubuntu
+
 
