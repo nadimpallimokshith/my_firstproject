@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: target/*.war
+  - source: target/firstproject123-1.0-SNAPSHOT.war
     destination: /opt/tomcat8/webapps/firstproject123-1.0-SNAPSHOT
 permissions:
   - object: /opt/tomcat8/webapps/firstproject123-1.0-SNAPSHOT

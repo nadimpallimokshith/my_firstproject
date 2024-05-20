@@ -24,7 +24,7 @@ artifacts:
   files:
     
     - appspec.yml
-    - target/*.war
+    - target/firstproject123-1.0-SNAPSHOT.war
     - stop_tomcat.sh
     - start_tomcat.sh
     - verify_tomcat.sh
