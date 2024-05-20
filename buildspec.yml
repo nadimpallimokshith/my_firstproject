@@ -23,5 +23,7 @@ phases:
 artifacts:
   files:
     - target/*.war
-    
+    - stop_tomcat.sh
+    - start_tomcat.sh
+    - verify_tomcat.sh
   discard-paths: yes

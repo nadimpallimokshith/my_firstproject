@@ -2,11 +2,23 @@ version: 0.0
 os: linux
 files:
   - source: target/
-    destination: /var/lib/tomcat/webapps/firstproject123-1.0-SNAPSHOT
+    destination: /opt/tomcat/webapps/firstproject123-1.0-SNAPSHOT
 permissions:
-  - object: /var/lib/tomcat/webapps/firstproject123-1.0-SNAPSHOT
+  - object: /opt/tomcat/webapps/firstproject123-1.0-SNAPSHOT
     pattern: "**"
     owner: tomcat8
     group: tomcat8
-
+hooks:
+  BeforeInstall:
+    - location: stop_tomcat.sh
+      timeout: 300
+      runas: ubuntu
+  AfterInstall:
+    - location: start_tomcat.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStart:
+    - location: verify_tomcat.sh
+      timeout: 300
+      runas: ubuntu
 
