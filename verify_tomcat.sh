@@ -1,5 +1,5 @@
 #!/bin/bash
-if curl -s http://localhost:8080/firstproject123-1.0-SNAPSHOT/health | grep 'UP'; then
+if curl -s http://localhost:8080/firstproject123-1.0-SNAPSHOT | grep 'UP'; then
   echo "Application is running."
   exit 0
 else
