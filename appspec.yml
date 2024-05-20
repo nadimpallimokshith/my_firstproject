@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: target/
-    destination: /opt/tomcat/webapps/firstproject123-1.0-SNAPSHOT
+    destination: /opt/tomcat8/webapps/firstproject123-1.0-SNAPSHOT
 permissions:
-  - object: /opt/tomcat/webapps/firstproject123-1.0-SNAPSHOT
+  - object: /opt/tomcat8/webapps/firstproject123-1.0-SNAPSHOT
     pattern: "**"
     owner: tomcat8
     group: tomcat8
