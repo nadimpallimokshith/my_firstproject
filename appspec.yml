@@ -11,7 +11,7 @@ permissions:
 hooks:
   BeforeInstall:
     - location: stop_tomcat.sh
-      timeout: 300
+      timeout: 120
       runas: ubuntu
   AfterInstall:
     - location: start_tomcat.sh
