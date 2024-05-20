@@ -22,6 +22,8 @@ phases:
       # Add any post-build steps here
 artifacts:
   files:
+    
+    - appspec.yml
     - target/*.war
     - stop_tomcat.sh
     - start_tomcat.sh
